@@ -1,0 +1,79 @@
+{
+  "editor.formatOnSave": false,
+  "editor.tabSize": 2,
+  "editor.insertSpaces": true,
+  "editor.codeActionsOnSave": {
+    "source.fixAll.eslint": true
+  },
+  "eslint.enable": true,  
+  "eslint.validate": [
+    "javascript",
+    "javascriptreact",
+    "typescript",
+    "typescriptreact"
+  ],
+  "search.exclude": {
+    "**/.yarn": true,
+    "**/node_modules": true,
+    "/dist": true,
+    "/logs": true
+  },
+  "typescript.enablePromptUseWorkspaceTsdk": true,
+  "typescript.tsdk": "node_modules\\typescript\\lib",
+  "todo-tree.general.rootFolder": "${workspaceFolder}/src",
+  "todo-tree.regex.regex": "(\\*|//|#|<!--|;|/\\*|^|^[ \\t]*(-|\\d+.))\\s*($TAGS)",
+  "todo-tree.regex.regexCaseSensitive": false,
+  "todo-tree.highlights.defaultHighlight": {
+    "icon": "alert",
+    "type": "tag-and-subTag",
+    "foreground": "#ffcc00",
+    "opacity": 50,
+    "iconColour": "#2378de"
+  },
+  "todo-tree.general.tags": [
+    "TODO",
+    "@deprecated",
+    "DEPRECATED",
+    "@SEE",
+    "@note"
+  ],
+  "todo-tree.general.tagGroups": {
+    "TODO": [
+      "todo",
+    ],
+    "DEPRECATED": [
+      "deprecated",
+      "@deprecated"
+    ],
+    "@SEE": [
+      "@see",
+      "@note"
+    ]
+  },
+  "todo-tree.highlights.customHighlight": {
+    "TODO": {
+      "icon": "check-circle"
+    },
+    "DEPRECATED": {
+      "foreground": "#c80000",
+      "gutterIcon": true,
+      "iconColour": "#c80000"
+    },
+    "@SEE": {
+      "icon": "link-external",
+      "foreground": "#cc00cc",
+      "hideFromTree": true
+    }
+  },
+  "cSpell.language": "en-GB",
+  "cSpell.words": [
+    "Boxicons",
+    "dtos",
+    "Eldred",
+    "linebreak",
+    "maxsize",
+    "sass",
+    "tada",
+    "vars"
+  ]
+}

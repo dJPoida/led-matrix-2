@@ -1,0 +1,12 @@
+{
+  "extends": "./tsconfig.json",
+  "compilerOptions": {
+    "declaration": true,
+    "sourceMap": true,
+    "declarationMap": true,
+  },
+  "exclude": [
+    "./dist",
+    "./src/server"
+  ]
+}
