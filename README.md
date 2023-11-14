@@ -25,11 +25,20 @@ Save the custom settings and write the image to the SD Card
 Using a physical screen, keyboard and mouse - follow the guides to
 - [Setup remote SSH access](https://www.raspberrypi.com/documentation/computers/remote-access.html#ssh)
 
-### 3. Pull the LED Matrix 2 Repo
+### 3. Install the LED Matrix 2 software
+TODO Documentation for installing the software on the Raspberry Pi
 
 # Contributing to the project
 
-# Building the project
+## Development Environment
+Sometimes you just wanna code without having the pain of building in the low spec environment of the Raspberry Pi. This project can be run in emulation mode on a fully featured dev environment without the LED hardware.
+
+- Clone the repo `git clone https://github.com/dJPoida/led-matrix-2.git`
+- Checkout the dev branch `git checkout dev` (or create a new branch `git checkout -b my-branch`)
+- Update packages `yarn`
+- Run the development server `yarn dev`
+
+If you want to work exclusively on the Server code without continuously re-compiling the client, you can set `USE_WEBPACK=false` in your `.env` to disable the webpack development server and hot reloading.
 
 ## Switching Node versions using NVM
 When switching node versions using NVM you have to re-enable the global packages for that node version.
@@ -39,12 +48,6 @@ nvm use 18.18.2
 corepack enable
 ```
 
-## Running on a local dev environment
-Sometimes you just wanna code without having the pain of building in the low spec environment of the Raspberry Pi. This project can be run in emulation mode on a fully featured dev environment.
-
-- Clone the repo `git clone https://github.com/dJPoida/led-matrix-2.git`
-- Checkout the dev branch `git checkout dev` (or create a new branch `git checkout -b my-branch`)
-- Run VS Code `code .`
 
 ## Typescript version
 This project uses Yarn PNP based linking. Therefore some editor SDKs are required for it to work in VSCode.

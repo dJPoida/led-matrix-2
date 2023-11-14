@@ -25,9 +25,9 @@ $font-family: 'Comfortaa', monospace;
 }
 
 // Import the Main Application Fonts (with the help of https://google-webfonts-helper.herokuapp.com/fonts)
-// @import './fonts/comfortaa';
+@import './fonts/comfortaa';
 
-// @import './components/_components';
+@import './components/_components';
 
 html {
   position: static;

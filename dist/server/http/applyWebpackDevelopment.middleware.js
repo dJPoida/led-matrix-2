@@ -5,6 +5,8 @@ exports.applyWebpackDevelopmentMiddleware = void 0;
 const config_1 = require("../lib/config");
 const contextLogger_1 = require("../lib/contextLogger");
 const wait_helper_1 = require("../../shared/helpers/wait.helper");
+const fs_1 = require("fs");
+const path_1 = require("path");
 let developmentEnvironmentCompiling = false;
 /**
  * Initialise webpack to compile and serve the client in development mode
@@ -13,10 +15,10 @@ let developmentEnvironmentCompiling = false;
  * @note: the `require()` statements are intentionally localised to prevent import in production builds
  */
 function applyWebpackDevelopmentMiddleware(expressApp) {
+    const log = new contextLogger_1.ContextLogger('applyWebpackDevelopmentMiddleware()');
+    log.info('Enabling webpack for client compilation');
     // Only apply the middleware if this is a development environment
-    if (config_1.config.env.isDevelopment) {
-        const log = new contextLogger_1.ContextLogger('applyWebpackDevelopmentMiddleware()');
-        log.info('Enabling webpack for client compilation');
+    if (config_1.config.env.isDevelopment && config_1.config.env.useWebPack) {
         const webpack = require('webpack');
         const webpackConfig = require('../../../webpack.config.dev.js');
         const webpackDevMiddleware = require('webpack-dev-middleware');
@@ -60,6 +62,15 @@ function applyWebpackDevelopmentMiddleware(expressApp) {
             }
             next();
         });
+    }
+    // Notify the developer that the webpack compilation is disabled and they will be serving
+    // any previously built client that exists in the dist/client path
+    if (config_1.config.env.isDevelopment && !config_1.config.env.useWebPack) {
+        log.warn('Webpack Development Server is disabled. Client will be served from the `dist/client` path.');
+        // Check that the client exists
+        if (!(0, fs_1.existsSync)((0, path_1.join)((0, path_1.resolve)(__dirname, config_1.config.env.distPath), 'client/index.html'))) {
+            log.error('No client found in `dist/client`. Make sure you run `yarn build` or `yarn build:dev` to build a client bundle');
+        }
     }
 }
 exports.applyWebpackDevelopmentMiddleware = applyWebpackDevelopmentMiddleware;

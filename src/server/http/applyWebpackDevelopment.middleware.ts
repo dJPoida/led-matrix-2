@@ -7,6 +7,8 @@ import { config } from '../lib/config';
 import { ContextLogger } from '../lib/contextLogger';
 
 import { wait } from '../../shared/helpers/wait.helper';
+import { existsSync } from 'fs';
+import { join, resolve } from 'path';
 
 let developmentEnvironmentCompiling = false;
 
@@ -17,11 +19,11 @@ let developmentEnvironmentCompiling = false;
  * @note: the `require()` statements are intentionally localised to prevent import in production builds
  */
 export function applyWebpackDevelopmentMiddleware(expressApp: express.Express) {
-  // Only apply the middleware if this is a development environment
-  if (config.env.isDevelopment) {
-    const log = new ContextLogger('applyWebpackDevelopmentMiddleware()');
-    log.info('Enabling webpack for client compilation');
+  const log = new ContextLogger('applyWebpackDevelopmentMiddleware()');
+  log.info('Enabling webpack for client compilation');
 
+  // Only apply the middleware if this is a development environment
+  if (config.env.isDevelopment && config.env.useWebPack) {
     const webpack = require('webpack');
     const webpackConfig: Configuration = require('../../../webpack.config.dev.js');
     const webpackDevMiddleware = require('webpack-dev-middleware');
@@ -75,5 +77,18 @@ export function applyWebpackDevelopmentMiddleware(expressApp: express.Express) {
       }
       next();
     });
+  }
+
+  // Notify the developer that the webpack compilation is disabled and they will be serving
+  // any previously built client that exists in the dist/client path
+  if (config.env.isDevelopment && !config.env.useWebPack) {
+    log.warn('Webpack Development Server is disabled. Client will be served from the `dist/client` path.');
+
+    // Check that the client exists
+    if (!existsSync(join(resolve(__dirname, config.env.distPath), 'client/index.html'))) {
+      log.error(
+        'No client found in `dist/client`. Make sure you run `yarn build` or `yarn build:dev` to build a client bundle'
+      );
+    }
   }
 }
