@@ -176,9 +176,9 @@ export class Kernel extends TypedEventEmitter<KernelEventMap> {
 
     // Server running
     this.log.debug('Starting Http Server...');
-    this.httpServer.listen(config.transport.HTTPPort, () =>
-      this.log.info(`Http server running on port ${config.transport.HTTPPort}`)
-    );
+    this.httpServer.listen(config.transport.HTTPPort, () => {
+      this.log.info(`Http server running at http://localhost:${config.transport.HTTPPort}`);
+    });
 
     this.log.info('Kernel Running');
   }
