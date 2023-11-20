@@ -33,13 +33,34 @@ module.exports = wpMerge.merge(baseConfig, {
         },
       },
       {
-        test: /\.(scss|css)$/,
+        test: /\.module\.(s?css)$/,
         use: [
           MiniCssExtractPlugin.loader,
           {
             loader: 'css-loader',
             options: {
+              modules: true,
               sourceMap: false,
+              url: false,
+            },
+          },
+          {
+            loader: 'sass-loader',
+            options: {
+              sourceMap: false,
+            },
+          },
+        ],
+      },
+      // Loaders for module scss and css files
+      {
+        test: /\.(s?css)$/,
+        exclude: /\.module.(s?css)$/,
+        use: [
+          MiniCssExtractPlugin.loader,
+          {
+            loader: 'css-loader',
+            options: {
               url: false,
             },
           },

@@ -147,7 +147,9 @@ class Kernel extends typedEventEmitter_1.TypedEventEmitter {
         (0, applyExpressMiddleware_1.applyExpressMiddleware)(this.expressApp);
         // Server running
         this.log.debug('Starting Http Server...');
-        this.httpServer.listen(config_1.config.transport.HTTPPort, () => this.log.info(`Http server running on port ${config_1.config.transport.HTTPPort}`));
+        this.httpServer.listen(config_1.config.transport.HTTPPort, () => {
+            this.log.info(`Http server running at http://localhost:${config_1.config.transport.HTTPPort}`);
+        });
         this.log.info('Kernel Running');
     }
     /**

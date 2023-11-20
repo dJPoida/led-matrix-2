@@ -1,17 +1,14 @@
 import React from 'react';
-import { IosScrollFix } from '../components/ios-scroll-fix';
-import { ControlInterface } from '../components/control-interface';
-import { SocketProvider } from '../providers/socket.provider';
-import { LocalSettingsProvider } from '../providers/local-settings.provider';
-import { ErrorBoundary } from '../components/error-boundary';
+import { SocketProvider } from '../providers/Socket.provider';
+import { LocalSettingsProvider } from '../providers/LocalSettings.provider';
+import { ErrorBoundary } from '../components/application/ErrorBoundary/ErrorBoundary';
+import { ControlInterface } from '../components/application/ControlInterface/ControlInterface';
 
 export const ControlPage: React.FC = () => (
   <ErrorBoundary>
     <LocalSettingsProvider>
       <SocketProvider>
-        <IosScrollFix>
-          <ControlInterface />
-        </IosScrollFix>
+        <ControlInterface />
       </SocketProvider>
     </LocalSettingsProvider>
   </ErrorBoundary>

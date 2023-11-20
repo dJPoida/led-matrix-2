@@ -235,10 +235,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@eslint/js@npm:8.53.0":
-  version: 8.53.0
-  resolution: "@eslint/js@npm:8.53.0"
-  checksum: d29f6c207b2f6dc4ef174d16a3c07b0d3a17ca3d805680496ff267edd773e3bac41db4e7dcab622ca1970d892535bd19671e2a756d4eac75e96fd8c8dcdb619b
+"@eslint/js@npm:8.54.0":
+  version: 8.54.0
+  resolution: "@eslint/js@npm:8.54.0"
+  checksum: d61fb4a0be6af2d8cb290121c329697664a75d6255a29926d5454fb02aeb02b87112f67fdf218d10abac42f90c570ac366126751baefc5405d0e017ed0c946c5
   languageName: node
   linkType: hard
 
@@ -471,6 +471,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@types/css-modules@npm:^1.0.5":
+  version: 1.0.5
+  resolution: "@types/css-modules@npm:1.0.5"
+  checksum: 56ee69ec66b726765c6b4a57e0b58665341919267cbe380f9320379e84402a17afacc13228ea1271e1ce2f049465240d553d7bfa236b1f0b87c26c561f9eb875
+  languageName: node
+  linkType: hard
+
 "@types/eslint-scope@npm:^3.7.3":
   version: 3.7.7
   resolution: "@types/eslint-scope@npm:3.7.7"
@@ -629,12 +636,12 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/node@npm:^18.18.9":
-  version: 18.18.9
-  resolution: "@types/node@npm:18.18.9"
+"@types/node@npm:^18.18.10":
+  version: 18.18.10
+  resolution: "@types/node@npm:18.18.10"
   dependencies:
     undici-types: "npm:~5.26.4"
-  checksum: 8d58fba5eede0df009412ee188bc96f4baf340f4fafbda1bc66fb680fa775aedc88f0cb154a2455966443d9538af402fff022fb0632bddb1bd0648e5a86e5db9
+  checksum: dff9f4bd39cf551f168d92abb6ecb8d8bd1b404454fef3472b95b27214a691bede53b270740ec95acf5c833716dbb024dbb644823da21096c41ecaa3c240b0cb
   languageName: node
   linkType: hard
 
@@ -2826,14 +2833,14 @@ __metadata:
   languageName: node
   linkType: hard
 
-"eslint@npm:^8.53.0":
-  version: 8.53.0
-  resolution: "eslint@npm:8.53.0"
+"eslint@npm:^8.54.0":
+  version: 8.54.0
+  resolution: "eslint@npm:8.54.0"
   dependencies:
     "@eslint-community/eslint-utils": "npm:^4.2.0"
     "@eslint-community/regexpp": "npm:^4.6.1"
     "@eslint/eslintrc": "npm:^2.1.3"
-    "@eslint/js": "npm:8.53.0"
+    "@eslint/js": "npm:8.54.0"
     "@humanwhocodes/config-array": "npm:^0.11.13"
     "@humanwhocodes/module-importer": "npm:^1.0.1"
     "@nodelib/fs.walk": "npm:^1.2.8"
@@ -2870,7 +2877,7 @@ __metadata:
     text-table: "npm:^0.2.0"
   bin:
     eslint: bin/eslint.js
-  checksum: c5cd0049488c0463dab7d97466767ca5a1d0b3b59d0a223122683dc8039ecea30b27867fb9e38906b4c1ab9d09ece8a802a6c540d8905016f1cc4b4bb27329af
+  checksum: 4f205f832bdbd0218cde374b067791f4f76d7abe8de86b2dc849c273899051126d912ebf71531ee49b8eeaa22cad77febdc8f2876698dc2a76e84a8cb976af22
   languageName: node
   linkType: hard
 
@@ -4432,9 +4439,10 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "led-matrix-2@workspace:."
   dependencies:
+    "@types/css-modules": "npm:^1.0.5"
     "@types/express": "npm:^4.17.21"
     "@types/mime-types": "npm:^2.1.4"
-    "@types/node": "npm:^18.18.9"
+    "@types/node": "npm:^18.18.10"
     "@types/react": "npm:^18.2.37"
     "@types/react-dom": "npm:^18.2.15"
     "@types/webpack-hot-middleware": "npm:^2.25.9"
@@ -4447,7 +4455,7 @@ __metadata:
     cross-env: "npm:^7.0.3"
     css-loader: "npm:^6.8.1"
     dotenv: "npm:^16.3.1"
-    eslint: "npm:^8.53.0"
+    eslint: "npm:^8.54.0"
     eslint-config-prettier: "npm:^9.0.0"
     eslint-plugin-node: "npm:^11.1.0"
     eslint-plugin-prettier: "npm:^5.0.1"
@@ -4461,6 +4469,7 @@ __metadata:
     prettier: "npm:^3.1.0"
     react: "npm:^18.2.0"
     react-dom: "npm:^18.2.0"
+    react-resizable-panels: "npm:^0.0.59"
     resolve-url-loader: "npm:^5.0.0"
     rimraf: "npm:^5.0.5"
     sass: "npm:^1.69.5"
@@ -4469,8 +4478,8 @@ __metadata:
     socket.io-client: "npm:^4.7.2"
     source-map-loader: "npm:^4.0.1"
     style-loader: "npm:^3.3.3"
-    ts-loader: "npm:^9.5.0"
-    tsx: "npm:^4.1.2"
+    ts-loader: "npm:^9.5.1"
+    tsx: "npm:^4.1.4"
     typescript: "npm:^5.2.2"
     url-loader: "npm:^4.1.1"
     webpack: "npm:^5.89.0"
@@ -5675,6 +5684,16 @@ __metadata:
   version: 16.13.1
   resolution: "react-is@npm:16.13.1"
   checksum: 33977da7a5f1a287936a0c85639fec6ca74f4f15ef1e59a6bc20338fc73dc69555381e211f7a3529b8150a1f71e4225525b41b60b52965bda53ce7d47377ada1
+  languageName: node
+  linkType: hard
+
+"react-resizable-panels@npm:^0.0.59":
+  version: 0.0.59
+  resolution: "react-resizable-panels@npm:0.0.59"
+  peerDependencies:
+    react: ^16.14.0 || ^17.0.0 || ^18.0.0
+    react-dom: ^16.14.0 || ^17.0.0 || ^18.0.0
+  checksum: 162f96f23a99d16a7d2daaf84d70028955bf8372e4469050a52ce11e48e4d9f5109258af7d94d5b1b12eb3877e139970837e9f1966f501454700fa24bada8c8e
   languageName: node
   linkType: hard
 
@@ -6889,9 +6908,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"ts-loader@npm:^9.5.0":
-  version: 9.5.0
-  resolution: "ts-loader@npm:9.5.0"
+"ts-loader@npm:^9.5.1":
+  version: 9.5.1
+  resolution: "ts-loader@npm:9.5.1"
   dependencies:
     chalk: "npm:^4.1.0"
     enhanced-resolve: "npm:^5.0.0"
@@ -6901,7 +6920,7 @@ __metadata:
   peerDependencies:
     typescript: "*"
     webpack: ^5.0.0
-  checksum: 433664f4dc52a91cc297266e142633c5398ebae8dbc70da12ce88d0468bd35f536d5aeb59233718d22750648a2770509bd36b29565ada356e5f1533cdfbb6da4
+  checksum: 7dc1e3e5d3d032b6ef27836032f02c57077dfbcdf5817cbbc16b7b8609e7ed1d0ec157a03eaac07960161d8ad4a9e030c4d6722fe33540cf6ee75156c7f9c33d
   languageName: node
   linkType: hard
 
@@ -6912,9 +6931,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"tsx@npm:^4.1.2":
-  version: 4.1.2
-  resolution: "tsx@npm:4.1.2"
+"tsx@npm:^4.1.4":
+  version: 4.1.4
+  resolution: "tsx@npm:4.1.4"
   dependencies:
     esbuild: "npm:~0.18.20"
     fsevents: "npm:~2.3.3"
@@ -6925,7 +6944,7 @@ __metadata:
       optional: true
   bin:
     tsx: dist/cli.mjs
-  checksum: b6318f8702b57d15881fe65e889e118abc48605c4aad68d31748cf0b376c45d87c656034deb01ecd9d2cbc1882699fa5428335e6af6f332f79c76f6eaa8c3ad0
+  checksum: 2ec7cf5a8353115082942e67d1d8a7173987872e0f288819ddf796851b399490f9c1752c21c87f1b3e49c6946884fc77e56b1d4668542480fd8a0465fe2f536f
   languageName: node
   linkType: hard
 

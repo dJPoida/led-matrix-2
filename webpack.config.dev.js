@@ -46,7 +46,28 @@ module.exports = wpMerge.merge(baseConfig, {
       //   loader: 'source-map-loader',
       // },
       {
-        test: /\.(scss|css)$/,
+        test: /\.module\.(s?css)$/,
+        use: [
+          'style-loader',
+          {
+            loader: 'css-loader',
+            options: {
+              modules: true,
+              // sourceMap: true,
+              url: false,
+            },
+          },
+          {
+            loader: 'sass-loader',
+            options: {
+              sourceMap: true,
+            },
+          },
+        ],
+      },
+      {
+        test: /\.(s?css)$/,
+        exclude: /\.module.(s?css)$/,
         use: [
           'style-loader',
           {
@@ -59,7 +80,7 @@ module.exports = wpMerge.merge(baseConfig, {
           {
             loader: 'sass-loader',
             options: {
-              // sourceMap: true,
+              sourceMap: true,
             },
           },
         ],

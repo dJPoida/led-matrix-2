@@ -21,6 +21,7 @@
   "typescript.enablePromptUseWorkspaceTsdk": true,
   "typescript.tsdk": "node_modules\\typescript\\lib",
   "typescript.preferences.quoteStyle": "single",
+  "scss.lint.emptyRules": "ignore",
   "todo-tree.general.rootFolder": "${workspaceFolder}/src",
   "todo-tree.regex.regex": "(\\*|//|#|<!--|;|/\\*|^|^[ \\t]*(-|\\d+.))\\s*($TAGS)",
   "todo-tree.regex.regexCaseSensitive": false,
@@ -74,6 +75,7 @@
     "linebreak",
     "maxsize",
     "sass",
+    "tabview",
     "tada",
     "vars"
   ]

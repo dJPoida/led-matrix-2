@@ -1,5 +1,10 @@
 module.exports = {
-  extends: ['eslint:recommended', 'plugin:@typescript-eslint/recommended', 'prettier'],
+  extends: [
+    'eslint:recommended',
+    'plugin:@typescript-eslint/recommended',
+    'prettier',
+    'plugin:react-hooks/recommended',
+  ],
   env: {
     browser: true,
     es2022: true,
@@ -20,6 +25,7 @@ module.exports = {
     sourceType: 'module',
   },
   rules: {
+    eqeqeq: ['error', 'always'],
     indent: ['error', 2],
     'linebreak-style': ['off'],
     'no-console': ['warn', { allow: ['warn', 'error'] }],
@@ -36,11 +42,13 @@ module.exports = {
       'error',
       {
         allowModules: [],
-        tryExtensions: ['.ts', '.js', '.d.ts', '.tsx'],
+        resolvePaths: [],
+        tryExtensions: ['.ts', '.js', '.d.ts', '.tsx', '.scss'],
       },
     ],
     'prefer-template': ['error'],
     'prettier/prettier': ['error'],
     '@typescript-eslint/no-unused-vars': ['warn'],
+    'react/jsx-curly-brace-presence': ['error', { props: 'never', propElementValues: 'never' }],
   },
 };

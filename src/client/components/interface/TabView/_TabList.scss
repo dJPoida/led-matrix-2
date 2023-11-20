@@ -1,0 +1,16 @@
+ul.tab-list {
+  background-color: fuchsia;
+
+  margin: 0;
+  padding: 0;
+  margin-block-start: unset;
+  padding-inline-start: unset;
+  display: flex;
+  list-style-type: none;
+  
+  & li {
+    display: block;
+    padding: 0.25em 0.5em;
+    cursor: pointer;
+  }
+}

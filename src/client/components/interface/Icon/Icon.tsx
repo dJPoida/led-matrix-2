@@ -1,7 +1,7 @@
 import React from 'react';
 import classNames from 'classnames';
 
-import { AN_ICON } from '../constants/icon.const';
+import { AN_ICON } from '../../../constants/icon.const';
 
 export type IconProps = {
   icon: AN_ICON;

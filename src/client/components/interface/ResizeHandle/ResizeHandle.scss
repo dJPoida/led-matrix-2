@@ -1,0 +1,27 @@
+.resize-handle {
+  flex: 0 0 0.5em;
+  position: relative;
+  outline: none;
+
+  --background-color: transparent;
+
+  &.hidden {
+    flex: 0;
+    display: none;
+  }
+
+  &[data-resize-handle-active] {
+    --background-color: var(--color-solid-resize-bar-handle);
+  }
+
+  & .resize-handle-inner{
+    position: absolute;
+    top: 0.25em;
+    bottom: 0.25em;
+    left: 0.25em;
+    right: 0.25em;
+    border-radius: 0.25em;
+    background-color: var(--background-color);
+    transition: background-color 0.2s linear;
+  }
+}

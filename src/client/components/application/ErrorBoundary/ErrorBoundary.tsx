@@ -1,8 +1,7 @@
 import React, { ReactNode, ErrorInfo } from 'react';
-import { Button } from './button';
-import { Icon } from './icon';
 
-import { ICON } from '../constants/icon.const';
+import { ICON } from '../../../constants/icon.const';
+import { Icon } from '../../interface/Icon/Icon';
 
 type ErrorBoundaryProps = {
   children?: ReactNode;
@@ -77,10 +76,10 @@ export class ErrorBoundary extends React.Component<ErrorBoundaryProps, ErrorBoun
           <p className="error">{JSON.stringify(errorInfo)}</p>
           <p className="error">{JSON.stringify(errorInfo?.componentStack)}</p>
           <div className="button-wrapper">
-            <Button onClick={this.handleClickReload}>
+            <button onClick={this.handleClickReload}>
               <Icon icon={ICON.REFRESH} />
               <span>Reload</span>
-            </Button>
+            </button>
           </div>
         </div>
       );
